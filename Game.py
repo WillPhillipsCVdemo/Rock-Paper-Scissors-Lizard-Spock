@@ -8,7 +8,7 @@ outcomes = {
     ('Rock', 'Lizard'): 'crushes',
     ('Lizard', 'Spock'): 'poisons',
     ('Spock', 'Scissors'): 'smashes',
-    ('Scissors', 'Lizard'): 'decaptiates',
+    ('Scissors', 'Lizard'): 'decapitates',
     ('Lizard', 'Paper'): 'eats',
     ('Paper', 'Spock'): 'disproves',
     ('Spock', 'Rock'): 'vaporizes',
