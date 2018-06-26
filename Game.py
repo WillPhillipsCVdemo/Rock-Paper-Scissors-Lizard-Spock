@@ -12,7 +12,7 @@ outcomes = {
     ('Lizard', 'Paper'): 'eats',
     ('Paper', 'Spock'): 'disproves',
     ('Spock', 'Rock'): 'vaporizes',
-    ('Rock', 'Scisors'): 'crushes'
+    ('Rock', 'Scissors'): 'crushes'
 }
 
 play = True
@@ -35,7 +35,7 @@ while play == True:
     elif (computer, player) in outcomes:
         print(f'You lose! {computer} {outcomes[computer, player]} {player}.')
     else:
-        print('Tie!')   
+        print('Tie!')  
 
     print('Would you like to play again? (Y/N)')
     answer = input()
