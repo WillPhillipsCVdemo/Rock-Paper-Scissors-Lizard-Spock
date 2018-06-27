@@ -6,4 +6,5 @@ Here's a diagram explaining how the game works
 
 ![How it works](https://vignette.wikia.nocookie.net/bigbangtheory/images/7/7d/RPSLS.png)
 
-Forked from [WillPhilipsCVdemo](https://github.com/WillPhillipsCVdemo/Rock-Paper-Scissors-Lizard-Spock)
+Original idea from [WillPhilipsCVdemo](https://github.com/WillPhillipsCVdemo/Rock-Paper-Scissors-Lizard-Spock)
+Edited by [michaelstrefeler](https://github.com/michaelstrefeler) thanks to reddit
