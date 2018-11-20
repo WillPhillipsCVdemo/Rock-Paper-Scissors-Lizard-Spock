@@ -1,85 +1,46 @@
-from random import randint
-# create a list of play options
-options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+from random import choice
+# List of play options
+options = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+
+outcomes = {
+    ('Scissors', 'Paper'): 'cuts',
+    ('Paper', 'Rock'): 'covers',
+    ('Rock', 'Lizard'): 'crushes',
+    ('Lizard', 'Spock'): 'poisons',
+    ('Spock', 'Scissors'): 'smashes',
+    ('Scissors', 'Lizard'): 'decapitates',
+    ('Lizard', 'Paper'): 'eats',
+    ('Paper', 'Spock'): 'disproves',
+    ('Spock', 'Rock'): 'vaporizes',
+    ('Rock', 'Scissors'): 'crushes'
+}
 
 play = True
 
-while play == True:
+while play is True:
 
-    computer = options[randint(0, 4)]
-    user_input = input("Please select; Rock, Paper, Scissors, Lizard or Spock\n")
-    u = user_input.lower()
+    computer = choice(options)
+    roll = input('Please select; Rock, Paper, Scissors, Lizard or Spock\n')
+    roll = roll.lower().capitalize()
 
-    player = u.capitalize()
+    # Makes sure that player makes valid choice
+    while roll not in options:
+        roll = input('Please select; Rock, Paper, Scissors, Lizard or Spock\n')
 
-    print("Player: ", player)
-    print("Computer: ", computer)
+    print(f'Player: {roll}')
+    print(f'Computer: {computer}')
 
-    ##Tie
-    if player == computer:
-        print("Tie!")
+    if (roll, computer) in outcomes:
+        print(f'You win! {roll} {outcomes[roll, computer]} {computer}.')
+    elif (computer, roll) in outcomes:
+        print(f'You lose! {computer} {outcomes[computer, roll]} {roll}.')
+    else:
+        print('Tie!')
 
-    ##Rock
-    elif player =="Rock":
-        if computer == "Paper":
-            print("You lose!", computer, "covers", player)
-        elif computer == "Scissors":
-            print("You win!", player, "smashes", computer)
-        elif computer == "Lizard":
-            print("You win!", player, "crushes", computer)
-        elif computer == "Spock":
-            print("You lose!", computer, "vaporizes", player)
+    print('Would you like to play again? (Y/N)')
+    answer = input()
 
-
-    ##Paper
-    elif player =="Paper":
-        if computer == "Scissors":
-            print("You lose!", computer, "cuts", player)
-        elif computer =="Rock":
-            print("You win!", player, "covers", computer)
-        elif computer == "Lizard":
-            print("You lose!", computer , "eats", player)
-        elif computer == "Spock":
-            print("You win!", player, "disproves", computer)
-
-    ##Scissors
-    elif player == "Scissors":
-        if computer == "Paper":
-            print("You win!", player, "cuts", computer)
-        elif computer == "Rock":
-            print("You lose!", computer, "crushes", player)
-        elif computer =="Lizard":
-            print("You win!", player, "decapitates", computer)
-        elif computer == "Spock":
-            print("You lose!", computer, "smashes", player)
-
-    ##Lizard
-    elif player == "Lizard":
-        if computer =="Rock":
-            print("You lose!", computer, "crushes", player)
-        elif computer =="Paper":
-            print("You win!", player, "eats", computer)
-        elif computer == "Scissors":
-            print("You lose!", computer, "decapitates", player)
-        elif computer == "Spock":
-            print("You win!", player, "", computer)
-
-    ##Spock
-    elif player == "Spock":
-        if computer == "Rock":
-            print("You win!", player, "vaporizes", computer)
-        elif computer == "Paper":
-            print("You lose!", computer, "disproves", player)
-        elif computer == "Scissors":
-            print("You win!", player, "smashes", computer)
-        elif computer == "Lizard":
-            print("You lose!", computer, "poisons", player)
-
-
-    print("Would you like to play again? \n")
-    answer =input()
-
-    if answer.lower() =="y" or answer.lower() =="yes":
-        play == True
+    if answer.lower() == 'y' or answer.lower() == 'yes':
+        play = True
     else:
         break
